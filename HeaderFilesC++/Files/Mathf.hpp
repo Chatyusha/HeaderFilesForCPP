@@ -10,7 +10,8 @@
 #define Mathf_hpp
 #include <cmath>
 namespace Mathf {
-    const double PI = 3.14159274f;
+    const double PI = 3.14159274;
+    const double E = 2.71828183;
     const double Deg2Rad = 0.0174532924;
     const double Rad2Deg = 57.29578;
     double deg_cos(double x){

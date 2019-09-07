@@ -13,9 +13,8 @@ using namespace std;
 using namespace Mathf;
 
 int main() {
-    Vector2 a(1,2),b(2,1),c;
-    bool d = a ^ b;
-    cout<<d<<endl;
-    double x = sqrt(3);
+    Vector2 a(1,2),b(2,1),c(2,4),d;
+    d=c*2;
+    cout<<c.ToString()<<endl;
     return 0;
 }

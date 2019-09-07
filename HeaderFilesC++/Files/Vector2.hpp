@@ -7,6 +7,7 @@
 #ifndef Vector2_h
 #define Vector2_h
 #include <string>
+#include <iostream>
 #include "Mathf.hpp"
 using namespace std;
 using namespace Mathf;
@@ -21,7 +22,8 @@ public:
     Vector2 operator - (const Vector2 &A);
     double operator * (const Vector2 &A);
     Vector2 operator * (const int &A);
-    Vector2 operator * (const double &A);
+    template<typename T> Vector2 operator * (const T &A);
+    template<typename T> Vector2 operator / (const T &A);
     bool operator ^ (const Vector2 &A);
     
     double size();
@@ -44,17 +46,17 @@ Vector2 Vector2::operator - (const Vector2 &A){
 double Vector2::operator*(const Vector2 &A){
     return x*A.x + y*A.y;
 }
-Vector2 Vector2::operator*(const int &A){
-    Vector2 C;
-    C.x=A*x;
-    C.y=A*y;
-    return C;
-}
-Vector2 Vector2::operator*(const double &A){
+template<typename T> Vector2 Vector2::operator*(const T &A){
     Vector2 C;
     C.x=A*x;
     C.y=A*y;
     return  C;
+}
+template<typename T> Vector2 Vector2::operator/(const T &A){
+    Vector2 C;
+    C.x=x/A;
+    C.y=y/A;
+    return C;
 }
 bool Vector2::operator^(const Vector2 &A){
     double n=x*A.x+y*A.y;
